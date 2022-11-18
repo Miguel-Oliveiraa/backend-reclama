@@ -1,0 +1,19 @@
+{
+  "name": "hacker-cidadao",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gilbertomoj/hacker-cidadao.git",
+  "author": "Gilberto Medeiros <gibamedeirosgc@gmail.com>",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
+  }
+}
