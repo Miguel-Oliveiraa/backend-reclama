@@ -13,7 +13,7 @@ const Denuncia = new Schema({
         default: false
     },
     tipo: {
-        type: String,
+        type: Number,
         required: true,
         default: false
     },
@@ -26,6 +26,7 @@ const Denuncia = new Schema({
         type: Schema.Types.ObjectId,
         ref: "atendente",
         required: false,
+        default: {}
     },
     comentario: {
         type: String,
