@@ -8,13 +8,9 @@ const Atendente = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
     },
-    password: {
-        type: String,
-        required: true
-    },
-    telefone: {
+    senha: {
         type: String,
         required: true
     }
