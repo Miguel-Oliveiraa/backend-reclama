@@ -6,12 +6,19 @@ const config = require("../config/auth");
 module.exports = {
     async create(nome, email, senha){
         try {
-            const newAtendente = await Atendente.create({
-                nome, 
-                email, 
-                senha: bcript.hashSync(senha, 8)
-            })
-            return {message: newAtendente, status: 200}
+            const findAtendente = await Atendente.findOne({email})
+            if(!findAtendente){
+                const newAtendente = await Atendente.create({
+                    nome, 
+                    email, 
+                    senha: bcript.hashSync(senha, 8)
+                })
+                return {message: newAtendente, status: 200}
+            } else {
+                return {message: "Um atendente com esse email já existe", status: 400}
+
+            }
+
         } catch (error) {
             return {message: error, status: 400}
         }

@@ -27,10 +27,15 @@ const Denuncia = new Schema({
         ref: "atendente",
         required: false,
     },
-    finalizado: {
-        type: Boolean,
+    comentario: {
+        type: String,
+        required: false,
+        default: ""
+    },
+    status: {
+        type: Number,
         required: true,
-        default: false
+        default: 0
     },
     endereco: {
         type: String,

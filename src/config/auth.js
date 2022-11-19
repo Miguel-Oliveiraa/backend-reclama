@@ -1,4 +1,4 @@
 module.exports = {
     secret: "HACKACIDADA",
-    expireIn: 5000
+    expireIn: 5000000
 }
