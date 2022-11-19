@@ -1,9 +1,11 @@
 const denuncia = require("../models/denuncia")
+const cpf_denuncia = require("../models/CPF_Denuncia")
 
 module.exports = {
-    async create(titulo, descricao, tipo, cpf_usuario, endereco){
+    async create(titulo, descricao, tipo, cpf, endereco){
         try {
-            const newDenuncia = await denuncia.create({titulo, descricao, tipo, cpf_usuario, endereco})
+            const newDenuncia = await denuncia.create({titulo, descricao, tipo, endereco})
+            const cpf_den = await cpf_denuncia.create({id_denuncia: newDenuncia._id, cpf })
             return {message: newDenuncia, status: 200}
         } catch (error) {
             return {message: error, status: 400}
@@ -12,9 +14,9 @@ module.exports = {
     async findByCode(codigo, cpf){
         try {
             const Denuncia = await denuncia.findOne({ codigo })
-            console.log(Denuncia)
-            const updatedDenuncia = await denuncia.update({name: "subjacentes"}, {$push: {subjacentes: cpf}},  {new: true})
-            console.log(updatedDenuncia)
+
+            const cpf_den = await cpf_denuncia.create({ id_denuncia: Denuncia._id, cpf})
+
             return {message: Denuncia, status: 200}
         } catch (error) {
             return {message: error, status: 400}
@@ -49,11 +51,11 @@ module.exports = {
         }
     },
 
-    async search(cpf_usuario){
+    async search(cpf){
         try {
-            const findCpfs = await denuncia.find({cpf_usuario}).populate("atendente_id");
-            return {message: findCpfs, status: 200}
-
+            const denuncias = await cpf_denuncia.find({ cpf }).populate("id_denuncia");
+            
+            return {message: denuncias, status: 200}
         } catch (error) {
             return {message: error, status:400}
         }
@@ -90,4 +92,13 @@ module.exports = {
             return {message: error, status:400}
         } 
     },
+
+    async denuncia_cpf(id_denuncia, cpf){
+        try {
+            const cpf_denuncia = await cpf_denuncia.create({ id_denuncia, cpf})
+            return {message: cpf_denuncia, status: 200}
+        } catch (error) {
+            return {message: error, status:400}
+        } 
+    }
 }

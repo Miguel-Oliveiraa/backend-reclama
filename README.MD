@@ -1,19 +1,12 @@
 # Reclame 
-Organizando suas caronas!
-
+Backend para projeto a prefeitura de Recife feito em NodeJS com o framework Express e o banco MongoDB. 💻
 
 ## 🧾 Conteúdos
 <p align="center">
- <a href="#-Sobre">Sobre</a> •
  <a href="#-Tecnologias">Tecnologias</a> • 
  <a href="#-Requisitos">Requisitos</a> • 
  <a href="#-Local">Executando aplicação localmente</a> • 
 </p>
-
-
-## 📕 Sobre
-
-Reclame é ....
 
 ## 🛠 Tecnologias
 
@@ -25,15 +18,18 @@ Tecnologias utilizadas na realização do projeto:
 
 ## ⚙ Requisitos
 
+- [Git](https://git-scm.com/)
 - [Yarn](https://yarnpkg.com/)
 
 ## 💻 Local
 
 ```bash
+# Baixar o repositório com o código
+git clone https://github.com/gilbertomoj/backend-reclama.git
+
 # Instalar o nodemon
 npm i nodemon
-```
 
-```bash
+# Iniciar o servidor
 yarn dev
 ```
