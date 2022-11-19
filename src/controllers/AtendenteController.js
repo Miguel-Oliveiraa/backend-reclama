@@ -4,18 +4,18 @@ const jwt = require("jsonwebtoken");
 const config = require("../config/auth");
 
 module.exports = {
-    async create(nome, email, senha){
+    async create(nome, cpf, senha){
         try {
-            const findAtendente = await Atendente.findOne({email})
+            const findAtendente = await Atendente.findOne({cpf})
             if(!findAtendente){
                 const newAtendente = await Atendente.create({
                     nome, 
-                    email, 
+                    cpf, 
                     senha: bcript.hashSync(senha, 8)
                 })
                 return {message: newAtendente, status: 200}
             } else {
-                return {message: "Um atendente com esse email já existe", status: 400}
+                return {message: "Um atendente com esse CPF já existe", status: 400}
 
             }
 
@@ -31,11 +31,11 @@ module.exports = {
             return {message: error, status: 400}
         }
     },
-    async login(email, senha){
+    async login(cpf, senha){
         try {
-            const foundAtendente = await Atendente.findOne({email})
+            const foundAtendente = await Atendente.findOne({cpf})
             if(!foundAtendente){
-                return {message: "Email não encontrado", status: 400}
+                return {message: "CPF não encontrado", status: 400}
             }else{
                 const passwordMatch = await bcript.compare(
                     senha,

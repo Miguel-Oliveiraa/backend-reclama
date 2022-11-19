@@ -6,7 +6,7 @@ const Atendente = new Schema({
         type: String,
         required: true,
     },
-    email: {
+    cpf: {
         type: String,
         required: true,
     },

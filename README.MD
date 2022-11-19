@@ -25,7 +25,7 @@ Tecnologias utilizadas na realização do projeto:
 
 ## ⚙ Requisitos
 
-- [yarn](https://yarnpkg.com/)
+- [Yarn](https://yarnpkg.com/)
 
 ## 💻 Local
 
