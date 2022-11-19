@@ -4,10 +4,10 @@ Organizando suas caronas!
 
 ## 🧾 Conteúdos
 <p align="center">
- <a href="#Sobre">Sobre</a> •
- <a href="#Tecnologias">Tecnologias</a> • 
- <a href="#Requisitos">Requisitos</a> • 
- <a href="#Executando aplicação localmente">Executando aplicação localmente</a> • 
+ <a href="#-Sobre">Sobre</a> •
+ <a href="#-Tecnologias">Tecnologias</a> • 
+ <a href="#-Requisitos">Requisitos</a> • 
+ <a href="#-Local">Executando aplicação localmente</a> • 
 </p>
 
 
