@@ -7,7 +7,7 @@ Organizando suas caronas!
  <a href="#-Sobre">Sobre</a> •
  <a href="#-Tecnologias">Tecnologias</a> • 
  <a href="#-Requisitos">Requisitos</a> • 
- <a href="#-Executando aplicação localmente">Executando aplicação localmente</a> • 
+ <a href="#-Local">Executando aplicação localmente</a> • 
 </p>
 
 
@@ -27,7 +27,7 @@ Tecnologias utilizadas na realização do projeto:
 
 - [yarn](https://yarnpkg.com/)
 
-## 💻 Executando aplicação localmente
+## 💻 Local
 
 ```bash
 # Instalar o nodemon
