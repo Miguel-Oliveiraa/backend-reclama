@@ -9,6 +9,17 @@ module.exports = {
             return {message: error, status: 400}
         }
     },
+    async findByCode(codigo, cpf){
+        try {
+            const Denuncia = await denuncia.findOne({ codigo })
+            console.log(Denuncia)
+            const updatedDenuncia = await denuncia.update({name: "subjacentes"}, {$push: {subjacentes: cpf}},  {new: true})
+            console.log(updatedDenuncia)
+            return {message: Denuncia, status: 200}
+        } catch (error) {
+            return {message: error, status: 400}
+        }
+    },
 
     async findFiltereds(filtro){
         try {

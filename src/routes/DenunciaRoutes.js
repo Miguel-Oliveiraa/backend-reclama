@@ -67,4 +67,17 @@ router.get("/get/filter/:filter", async (req, res) => {
         return res.status(400).json({message: error, status: 400})
     }
 })
+
+router.post("/get/code/:cpf", async (req, res) => {
+    try {
+        const { code } = req.body
+        const cpf = req.params.cpf;
+        const result = await DenunciaController.findByCode(code, cpf)
+        return res.status(result.status).json({message: result.message, status: result.status})
+    } catch (error) {
+        return res.status(400).json({message: error, status: 400})
+    }
+})
+
+
 module.exports = router;
